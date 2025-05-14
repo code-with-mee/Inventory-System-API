@@ -38,4 +38,5 @@ router.register(r'order-details', OrderDetailViewSet)
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)), 
+    path('api/dashboard/', include('dashboards.urls')),
 ]
