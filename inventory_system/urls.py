@@ -21,6 +21,8 @@ from customers.views import CustomerViewSet
 from suppliers.views import SupplierViewSet
 from employees.views import EmployeeViewSet
 from products.views import CategoryViewSet, ProductViewSet
+from purchases.views import PurchaseViewSet, PurchaseDetailViewSet
+from sales.views import OrderViewSet, OrderDetailViewSet
 
 router = DefaultRouter()
 router.register(r'customers', CustomerViewSet)
@@ -28,6 +30,10 @@ router.register(r'suppliers', SupplierViewSet)
 router.register(r'employees', EmployeeViewSet) 
 router.register(r'categories', CategoryViewSet)
 router.register(r'products', ProductViewSet)
+router.register(r'purchases', PurchaseViewSet)
+router.register(r'purchase-details', PurchaseDetailViewSet)
+router.register(r'orders', OrderViewSet)
+router.register(r'order-details', OrderDetailViewSet)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
