@@ -1,20 +1,19 @@
-from rest_framework.views import APIView
+from rest_framework.viewsets import ViewSet
 from rest_framework.response import Response
 from rest_framework.permissions import AllowAny
-from sales.models import Order
 from django.db import models
-
 
 from products.models import Product
 from customers.models import Customer
 from employees.models import Employee
 from suppliers.models import Supplier
 from purchases.models import Purchase
+from sales.models import Order
 
-class DashboardSummaryView(APIView):
+class DashboardSummaryViewSet(ViewSet):
     permission_classes = [AllowAny]
 
-    def get(self, request):
+    def list(self, request):
         total_products = Product.objects.count()
         total_customers = Customer.objects.count()
         total_employees = Employee.objects.count()
