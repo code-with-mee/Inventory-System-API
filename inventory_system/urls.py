@@ -23,6 +23,7 @@ from employees.views import EmployeeViewSet
 from products.views import CategoryViewSet, ProductViewSet
 from purchases.views import PurchaseViewSet, PurchaseDetailViewSet
 from sales.views import OrderViewSet, OrderDetailViewSet
+from dashboards.views import DashboardSummaryViewSet
 
 router = DefaultRouter()
 router.register(r'customers', CustomerViewSet)
@@ -34,9 +35,9 @@ router.register(r'purchases', PurchaseViewSet)
 router.register(r'purchase-details', PurchaseDetailViewSet)
 router.register(r'orders', OrderViewSet)
 router.register(r'order-details', OrderDetailViewSet)
+router.register(r'dashboard', DashboardSummaryViewSet,basename="dashboard")
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', include(router.urls)), 
-    path('api/dashboard/', include('dashboards.urls')),
 ]
